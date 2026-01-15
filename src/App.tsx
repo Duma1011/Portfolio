@@ -1,9 +1,9 @@
 import { useState }  from 'react';
 import { makeStyles,Tab, TabList,SelectTabData} from "@fluentui/react-components";
-import Home from './pages/HomePage';
-import About from './pages/AboutPage';
-import Projects from "./pages/ProjectsPage";
-import Contact from './pages/ContactPage';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Projects from "./pages/Projects";
+import Contact from './pages/Contact';
 
 const useStyles=makeStyles({
   
@@ -35,11 +35,10 @@ const App=()=>{
       <Tab value="contact">Contacts</Tab>
     </TabList>
 
-    {selectedTab=="home" && <Home/>}
-    {selectedTab=="about" && <About/>}
-    {selectedTab=="projects" && <Projects/>}
-    {selectedTab=="contact" && <Contact/>}
-
+    {selectedTab==="home" && <Home/>}
+    {selectedTab==="about" && <Profile/>}
+    {selectedTab==="projects" && <Projects/>}
+    {selectedTab==="contact" && <Contact/>}
   </div>
   );
 }
