@@ -1,5 +1,7 @@
 import React from 'react';
-import { Image,makeStyles,Tab, TabList, Text } from "@fluentui/react-components";
+import { Image, makeStyles, Text } from "@fluentui/react-components";
+import photo from '../assets/1000034090.jpg';
+
 
 const useStyles=makeStyles({
     container: {
@@ -28,7 +30,7 @@ const Home=()=>{
         
     </div>
     <Image
-     src="\1000034090.jpg"
+     src={photo}
      width={300}
      shadow
     />

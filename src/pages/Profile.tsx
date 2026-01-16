@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image,makeStyles,Text, Card,CardHeader,Body1} from "@fluentui/react-components";
+import {makeStyles,Text, Card,CardHeader,Body1} from "@fluentui/react-components";
 
 const useStyles = makeStyles({
   container: {
@@ -10,13 +10,10 @@ const useStyles = makeStyles({
   },
 
   card: {
-    width: "520px",
-    maxWidth: "100%",
-    height: "250px",
+    width: "500px",
+    height: "300px",
     padding: "10px",
     margin: "auto",
-    outline: '0 !important',
-    border: '0 !important',
     '::after': {
       borderTopColor: 'transparent !important',
       borderRightColor: 'transparent !important',
@@ -27,7 +24,7 @@ const useStyles = makeStyles({
 
   cardContainer:{
     display: "flex",
-    flexDirection: "row", // default, but explicit is good
+    flexDirection: "row", 
     gap: "15px",
     alignItems: "center",
   },
@@ -42,6 +39,8 @@ const Profile=()=>{
     const styles = useStyles();
 
     return(
+
+     <> 
     <div className={styles.container}>
 
             <Text style={{ padding: '20px',maxWidth: '1000px'}} >
@@ -83,25 +82,34 @@ const Profile=()=>{
                </Card>
 
               <Card className={styles.card}>
-                  <CardHeader header={<Body1>Programing Languages</Body1>}/>
+                  <CardHeader header={<Body1>Tools of trade</Body1>}/>
+                  <ul>
+                    <li>C#</li>
+                    <li>Python </li>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>Java</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>.NET</li>
+                    <li>ASP.NET MVC</li>
+                    <li>ASP.NET Core</li>
+                    <li>Entity Framework</li>
+                  </ul>
               </Card>
           </div>
-
-          <div className={styles.cardContainer}>
-                <Card className={styles.card}>
-                  <CardHeader header={<Body1>Cloud and Platforms</Body1>}/> 
-               </Card>
-
-               <Card className={styles.card}>
-                  <CardHeader header={<Body1>Frameworks and Libraries</Body1>}/>
-               </Card>
-          </div>
-                  
-          <div className={styles.cardContainer}>
-                
-          </div>
     </div>
-    
+
+    <div>
+      <Card className={styles.card}>
+        <CardHeader header={<Body1>Cloud and Platforms</Body1>}/> 
+            <ul>
+              <li>Azure</li>
+              </ul>
+      </Card>
+    </div>
+  </>
+
     );
 }
 
