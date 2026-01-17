@@ -7,7 +7,7 @@ import toolsImg from '../assets/techtools.jpg';
 
 const useStyles = makeStyles({
   container: {
-    gap: "10px",
+    gap: "20px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
   cardContainer:{
     display: "flex",
     flexDirection: "row", 
-    gap: "15px",
+    gap: "30px",
     alignItems: "center",
   },
   cardHeader: {
