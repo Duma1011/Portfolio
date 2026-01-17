@@ -47,21 +47,30 @@ const useStyles = makeStyles(
         fontSize: "80px",
         alignContent: "center",
     },
+
+    text:{
+        color:"#8E9A98"
+    },
+    title:{
+        fontSize: "30px",
+        fontWeight: "bold",
+        color:"#8E9A98"
+    }
 });
 
 const Contact=()=>{
     const styles=useStyles();
     return(
     <div className={styles.container}>
-        <Text align="center" >
+        <Text align="center" className={styles.title} >
             Contact me<br/>
         </Text> 
 
-        <Text align="center" >
+        <Text align="center" className={styles.text} >
            Our journey together starts here. Whether you have questions, ideas, or just want to say hello, I'm all ears.    
         </Text>  
 
-        <Text align="center" > 
+        <Text align="center" className={styles.text} > 
            I am eager to leverage technical expertise and analytical thinking to build impactful solutions in a production environment.
         </Text>
 
@@ -71,14 +80,14 @@ const Contact=()=>{
                 <PersonCallRegular className={styles.phoneIcon}/>
             </div>
               
-              <Text align="center"> Call or WhatsApp </Text>
-              <Text align="center">0634151822</Text>
+              <Text align="center" className={styles.text}> Call or WhatsApp </Text>
+              <Text align="center" className={styles.text}>0634151822</Text>
             </Card>
 
            <Card appearance="subtle"className={styles.card}>
               <MailRegular className={styles.mailIcon} />
-              <Text align="center"> Email me </Text>
-              <Text align="center">tsitsap11@gmail.com</Text>
+              <Text align="center" className={styles.text}> Email me </Text>
+              <Text align="center" className={styles.text}>tsitsap11@gmail.com</Text>
            </Card>
         </div>
     </div>
