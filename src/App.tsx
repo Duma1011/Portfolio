@@ -18,9 +18,10 @@ const useStyles=makeStyles({
 
   },
   mainPage:{
-    backgroundColor: "#1b1b1e",
+    backgroundColor:"#1b1b1e",
     minHeight: '100vh', 
     textColor: 'white',
+     backgroundImage: "url('/background.jpg')",
   },
   tab:{
     color:"#8E9A98"

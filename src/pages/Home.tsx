@@ -19,7 +19,8 @@ const useStyles=makeStyles({
     height: "fit-content",
     width: "fit-content",
     gap: "20px",
-    paddingLeft: "0px",
+    padding: "10px",
+   // backgroundColor: "#414A4C",
     
   },
   card:{
@@ -68,17 +69,17 @@ const useStyles=makeStyles({
         color: "#8E9A98"
    },
    cardLabel:{
-    color:"#8E9A98",
+    color:"#F0F8FF",
     fontSize: "16px",
    },
    cureerTitle:{
-    color:"#166534",
+    color:"#00693E",
     fontSize:"30px", 
     fontWeight:"bold"
    },
    nameTitle:{
      fontSize:"20px"
-    ,color:"#8E9A98"
+    ,color:"#F0F8FF"
    },
    IamLLabel:{
     color:"#8E9A98"
@@ -93,6 +94,11 @@ const useStyles=makeStyles({
    frontPicture:{
     width: "300px",
     shape: "circular"
+   },
+   label:{
+    color:"#166534",
+    fontSize: "18px",
+    fontWeight: "bold"
    }
 });
 const Home=()=>{
@@ -118,17 +124,17 @@ const Home=()=>{
         <Card appearance="subtle" className={styles.card}>
             <div className={styles.cardContent}>
                 <Text align="center" className={styles.cardLabel}>
-                    1.5+ years <br/> experience 
+                   <span className={styles.label}>1.5+ </span> <br/>years experience 
                 </Text>
 
                 <Divider vertical  className={styles.divider}/>
                 <Text align="center" className={styles.cardLabel}>
-                    10+ <br/> projects completed
+                    <span className={styles.label}>5+ </span> <br/> Personal Projects
                 </Text>
                  <Divider vertical  className={styles.divider}/>
                  <Text align="center" className={styles.cardLabel}>
-                    Junior Software Engineer <br/>
-                    Current role
+                    <span className={styles.label}>Junior </span> <br/>
+                    Cureer Level
                  </Text>
             </div>
         </Card>

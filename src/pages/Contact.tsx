@@ -30,6 +30,7 @@ const useStyles = makeStyles(
       borderBottomColor: 'transparent !important',
       borderLeftColor: 'transparent !important',
      },
+     backgroundColor: "#414A4C",
     },
     cardIconsContainer:{
         display: "flex",
@@ -48,13 +49,17 @@ const useStyles = makeStyles(
         alignContent: "center",
     },
 
-    text:{
+    paragraph:{
         color:"#8E9A98"
     },
     title:{
         fontSize: "30px",
         fontWeight: "bold",
         color:"#8E9A98"
+    },
+    text:{
+        fontSize: "16px",
+        color:"#111111"
     }
 });
 
@@ -66,11 +71,11 @@ const Contact=()=>{
             Contact me<br/>
         </Text> 
 
-        <Text align="center" className={styles.text} >
+        <Text align="center" className={styles.paragraph} >
            Our journey together starts here. Whether you have questions, ideas, or just want to say hello, I'm all ears.    
         </Text>  
 
-        <Text align="center" className={styles.text} > 
+        <Text align="center" className={styles.paragraph} > 
            I am eager to leverage technical expertise and analytical thinking to build impactful solutions in a production environment.
         </Text>
 

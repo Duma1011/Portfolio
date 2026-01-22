@@ -15,8 +15,8 @@ const useStyles = makeStyles({
   },
 
   card: {
-    width: "500px",
-    height: "600px",
+    width: "fit-content",
+    height: "400px",
     padding: "10px",
     '::after': {
       borderTopColor: 'transparent !important',
@@ -30,24 +30,18 @@ const useStyles = makeStyles({
     },
   },
 
-  cardContainer:{
-    display: "flex",
-    flexDirection: "row", 
-    gap: "30px",
-    alignItems: "center",
-  },
   cardHeader: {
     fontSize: "20px",
     fontWeight: "bold",
     color:"#8E9A98"
   },
-  text:{
-        color:"#8E9A98"
+  subHeading:{
+        color:"#F0F8FF"
     },
     pageTitle:{
         fontSize: "20px",
         fontWeight: "bold",
-        color:"#8E9A98"
+        color:"#F0F8FF"
     },
 
     professionDescription:{
@@ -55,8 +49,26 @@ const useStyles = makeStyles({
         maxWidth: '1000px',
         color:"#8E9A98"
     },
-    cardPreview:{
-        height: "250px",
+    
+    certificates:{
+      display:"flex",
+      flexDirection: "row",
+      gap:"10px"
+    },
+    technologies:{
+      display:"flex",
+      flexDirection:"row",
+      gap:"100px"
+    },
+    workExperience:{
+      display:"flex",
+      flexDirection:"column",
+      gap:"20px"
+    },
+    education:{
+      display:"flex",
+      flexDirection:"column",
+      gap:"20px"
     }
 });
 
@@ -74,68 +86,97 @@ const Profile=()=>{
             </Text>
         
 
-         <div className={styles.cardContainer}>
-            <Card  className={styles.card} appearance="subtle"> 
-                <CardHeader header={<Body1 className={styles.cardHeader}>Education</Body1>}/>
-                <CardPreview className={styles.cardPreview}>
-                    <Image src={educationImg}/>
-                </CardPreview>
-                <ul className={styles.text}>
-                    <li>BSc Mathematics and Computer Science - UCT(2019-2023)</li>
-                    <li>NSC(Matric) - Bardale Secondary School(2018)</li>
-                </ul>
-                 
-            </Card>
-  
-           <Card  className={styles.card}>
-                <CardHeader header={<Body1 className={styles.cardHeader}>Experience</Body1>}/>
-                <CardPreview className={styles.cardPreview}>
-                    <Image src={experienceImg}/>
-                </CardPreview>
-                <ul className={styles.text}>
-                    <li>Feb 2025-Current: Graduate Software Developer, Advania UK</li>
-                    <li>Nov 2024-Feb 2025: Artificial Intelligence (AI) Intern, Microsoft </li>
-                </ul>
-           </Card >
-
-         </div>
        
-          <div className={styles.cardContainer}>
-               <Card appearance="subtle" className={styles.card} > 
-                 <CardHeader header={<Body1 className={styles.cardHeader}>Certificates and Training</Body1>} className={styles.cardHeader}/>
-                 <CardPreview className={styles.cardPreview}>
-                  <Image src={certificatesImg}/>
-                 </CardPreview>
-                 <ul className={styles.text}>
-                    <li>Developing Solutions for Microsoft Azure (AZ-204).</li>
-                    <li>Azure AI Engineer Associate (AI-102).</li>
-                    <li>Azure AI Fundamentals(AI-100). </li>
-                    <li>Azure Fundamentals(AZ-900).</li>
-                 </ul>
+          <Text className={styles. subHeading}>Education</Text>
+          <Card>
+            <CardHeader  header={<Text>BSc Mathematics and Computer Sciences</Text>}/>
+            <Text>University of Cape Town</Text>
+            <Text>2019-2023</Text>
+          </Card>
+
+          <Card className={styles.card}>
+            <CardHeader  header={<Text>Matric(2018)</Text>}/>
+            <Text>Bardale Secondary School</Text>
+            <ul>
+              <li>
+                Bardale Sec- Top Leaner
+              </li>
+              <li>
+                Metro North District-Top learner in Quintile 3
+              </li>
+            </ul>
+          </Card>
+  
+           
+          <Text className={styles. subHeading}>Professional Experience</Text>
+          <div className={styles.workExperience}>
+            <Card className={styles.card}>
+               <CardHeader  header={<Text>Graduate Software Developer </Text> }/>
+               <Text>
+                  Advania UK
+               </Text>
+
+               <ul>
+                  <li>
+                   Documentation: Created  technical documentation packages for client handovers, ensuring seamless knowledge transfer and reducing onboarding time. 
+                  </li>
+                  <li>
+                    Feature Implementation: Implemented microservices architecture for Microsoft 365 multi-geo migrations, ensuring compliance with data residency requirements across geographic zones. 
+                  </li>
+                  <li>
+                    Agile Development: Comunicates daily project progress to team lead and articulating any blokers or chanllenges in the development pipeline in a timely manner for client briefing.
+                  </li>
+                  <li>
+                    Code Riews: Articulates development decision and procedures to team lead and  managers ensuring coding best practices are followed.
+                  </li>
+               </ul>
+            </Card>
+
+            <Card>
+              <CardHeader header={<Text>
+                 Artificial Intelligence (AI) Intern
+              </Text>}/>
+              
+            </Card>
+          </div>
+           
+  
+         
+       
+          
+            <Text className={styles. subHeading}>Certificates and Training</Text>
+
+            <div className={styles.certificates}>
+            <Card>
+              Developing Solutions for Microsoft Azure (AZ-204).
+            </Card>
+            <Card>
+              Azure AI Engineer Associate (AI-102).
+            </Card>
+            <Card>
+                Azure AI Fundamentals(AI-100).
+            </Card>
+            <Card>
+              Azure Fundamentals(AZ-900).
+            </Card>
+          </div>
+
+            
+            <Text className={styles. subHeading}>Technologies</Text>
+            <div className={styles.certificates}>
+               <Card>
+                .NET Technologies
                </Card>
 
-              <Card className={styles.card}>
-                  <CardHeader header={<Body1 className={styles.cardHeader}>Tools of trade</Body1>}/>
-                  <CardPreview className={styles.cardPreview}>
-                    <Image src={toolsImg}/>
-                  </CardPreview>
-                  <ul className={styles.text}>
-                    <li>C#</li>
-                    <li>Python </li>
-                    <li>JavaScript</li>
-                    <li>TypeScript</li>
-                    <li>Java</li>
-                    <li>React</li>
-                    <li>Node.js</li>
-                    <li>.NET</li>
-                    <li>ASP.NET MVC</li>
-                    <li>ASP.NET Core</li>
-                    <li>Entity Framework</li>
-                    <li>SQL</li>
-                    <li>Azure</li>
-                  </ul>
+               <Card>
+                Front-end Technologies
+               </Card>
+
+               <Card>
+                Back-end Technologies
               </Card>
-          </div>
+            </div>
+  
     </div> 
     );
 }
