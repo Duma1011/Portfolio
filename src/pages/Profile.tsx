@@ -1,11 +1,8 @@
 import React from 'react';
 import {makeStyles,Text, Card,CardHeader,CardPreview,Body1,Image} from "@fluentui/react-components";
-import educationImg from '../assets/education.jpg';
 import experienceImg from '../assets/experience.jpg';
-import certificatesImg from '../assets/certfication.jpg';
-import toolsImg from '../assets/techtools.jpg';
 import agileImg from '../assets/Agile.jpg';
-import techImg from  '../assets/technology.jpg';
+
 import workImg from '../assets/work.jpeg'
 const useStyles = makeStyles({
   container: {
@@ -19,7 +16,6 @@ const useStyles = makeStyles({
   card: {
     width: "900px",
     height: "320px",
-    //padding: "10px",
     display:"flex",
     flexDirection: "row",
     gap: "16px",
@@ -56,8 +52,8 @@ const useStyles = makeStyles({
     image: {
     width: "400px",
     height: "300px",
-    objectFit: "cover", // very important
-  },
+    objectFit: "cover"}
+    ,
   cardContentContainer:
   {
     width:"500px"

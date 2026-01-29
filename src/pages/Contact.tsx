@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image,makeStyles,Text,Card, CardHeader,Body1 } from "@fluentui/react-components";
+import { makeStyles,Text,Card} from "@fluentui/react-components";
 import { PersonCallRegular, MailRegular} from '@fluentui/react-icons';
 
 const useStyles = makeStyles(
