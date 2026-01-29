@@ -4,7 +4,9 @@ import educationImg from '../assets/education.jpg';
 import experienceImg from '../assets/experience.jpg';
 import certificatesImg from '../assets/certfication.jpg';
 import toolsImg from '../assets/techtools.jpg';
-
+import agileImg from '../assets/Agile.jpg';
+import techImg from  '../assets/technology.jpg';
+import workImg from '../assets/work.jpeg'
 const useStyles = makeStyles({
   container: {
     gap: "20px",
@@ -15,9 +17,14 @@ const useStyles = makeStyles({
   },
 
   card: {
-    width: "fit-content",
-    height: "400px",
-    padding: "10px",
+    width: "900px",
+    height: "320px",
+    //padding: "10px",
+    display:"flex",
+    flexDirection: "row",
+    gap: "16px",
+    alignItems: "flex-start",
+ 
     '::after': {
       borderTopColor: 'transparent !important',
       borderRightColor: 'transparent !important',
@@ -25,23 +32,20 @@ const useStyles = makeStyles({
       borderLeftColor: 'transparent !important',
       color:"#8E9A98"
     },
-    text:{
-        color:"#8E9A98"
-    },
+    borderRadius: "16px",
+    
   },
-
   cardHeader: {
     fontSize: "20px",
     fontWeight: "bold",
-    color:"#8E9A98"
   },
-  subHeading:{
+  text:{
         color:"#F0F8FF"
     },
     pageTitle:{
         fontSize: "20px",
         fontWeight: "bold",
-        color:"#F0F8FF"
+        color:"#8E9A98"
     },
 
     professionDescription:{
@@ -49,27 +53,15 @@ const useStyles = makeStyles({
         maxWidth: '1000px',
         color:"#8E9A98"
     },
-    
-    certificates:{
-      display:"flex",
-      flexDirection: "row",
-      gap:"10px"
-    },
-    technologies:{
-      display:"flex",
-      flexDirection:"row",
-      gap:"100px"
-    },
-    workExperience:{
-      display:"flex",
-      flexDirection:"column",
-      gap:"20px"
-    },
-    education:{
-      display:"flex",
-      flexDirection:"column",
-      gap:"20px"
-    }
+    image: {
+    width: "400px",
+    height: "300px",
+    objectFit: "cover", // very important
+  },
+  cardContentContainer:
+  {
+    width:"500px"
+  }
 });
 
 
@@ -81,102 +73,78 @@ const Profile=()=>{
             <Text className={styles.pageTitle}>My Profile</Text>
 
             <Text className={styles.professionDescription}>
-               I am a Software Developer with proven ability to transform complex technical challenges into practical systems that drive business 
-               impact. I am eager to leverage technical expertise and analytical thinking to build impactful solutions in a production environment, while building a strong software engineer foundation.
+               I’m a software engineer with a strong interest in building reliable, well-structured systems that solve real problems.
+               My background in mathematics and computer science has shaped how I approach software, I care about clarity, correctness, and long-term maintainability, not just making things work.
+
+               I enjoy working across the stack, particularly where cloud architecture, backend services, and automation intersect. I’m especially interested in systems that need to scale, handle failure gracefully, and operate in real-world constraints.
             </Text>
-        
-
-       
-          <Text className={styles. subHeading}>Education</Text>
-          <Card>
-            <CardHeader  header={<Text>BSc Mathematics and Computer Sciences</Text>}/>
-            <Text>University of Cape Town</Text>
-            <Text>2019-2023</Text>
-          </Card>
-
-          <Card className={styles.card}>
-            <CardHeader  header={<Text>Matric(2018)</Text>}/>
-            <Text>Bardale Secondary School</Text>
-            <ul>
+      
+        <div style={{flexDirection: "row",display: "flex"}}>
+            <Card className={styles.card} style={{backgroundColor: "#414A4C",}}>
+            <div className={styles.cardContentContainer}>
+            <CardHeader header={<Text>How I Approach Software</Text>} className={styles.cardHeader}/>
+            <Text>When I work on a project, I focus on:</Text>
+            <ul >
               <li>
-                Bardale Sec- Top Leaner
+                  Understanding the problem before the solution
+              </li>
+
+              <li>
+                Choosing tools based on trade-offs, not trends.
               </li>
               <li>
-                Metro North District-Top learner in Quintile 3
+                Designing systems that are simple to reason about
+              </li>
+              <li>
+                Writing code that someone else can read and extend
               </li>
             </ul>
+           <Text> I value clean boundaries, clear responsibilities, and predictable behaviour in systems. If something fails, I want to know why, and how it can recover safely.</Text>
+            </div>
+          
+            <Image src={agileImg} className={styles.image}/>
           </Card>
-  
-           
-          <Text className={styles. subHeading}>Professional Experience</Text>
-          <div className={styles.workExperience}>
-            <Card className={styles.card}>
-               <CardHeader  header={<Text>Graduate Software Developer </Text> }/>
-               <Text>
-                  Advania UK
-               </Text>
+         
+        </div>
+          
 
-               <ul>
-                  <li>
-                   Documentation: Created  technical documentation packages for client handovers, ensuring seamless knowledge transfer and reducing onboarding time. 
-                  </li>
-                  <li>
-                    Feature Implementation: Implemented microservices architecture for Microsoft 365 multi-geo migrations, ensuring compliance with data residency requirements across geographic zones. 
-                  </li>
-                  <li>
-                    Agile Development: Comunicates daily project progress to team lead and articulating any blokers or chanllenges in the development pipeline in a timely manner for client briefing.
-                  </li>
-                  <li>
-                    Code Riews: Articulates development decision and procedures to team lead and  managers ensuring coding best practices are followed.
+          <Card className={styles.card} style={{backgroundColor: "#414A4C",}}>
+           <div className={styles.cardContentContainer}>
+            <CardHeader header={<Text>What I’m Working On</Text>} className={styles.cardHeader}/>
+           
+           <Text >Right now, I’m focused on:</Text> 
+            <ul >
+                <li>Building cloud-native applications on Azure</li>
+                <li>Improving my understanding of distributed systems</li>
+                <li>Designing APIs and services that are secure and resilient</li>
+                <li>Refining how I communicate technical ideas through documentation and architecture diagrams.</li>
+                <li>
+                  Refining my problem solving approach and developing business acumen.
+                </li>
+                <li>
+                   Exploring with different .NET frameworks.
                   </li>
                </ul>
-            </Card>
+                <Text>I enjoy turning complex requirements into practical, working solutions.</Text>
+           </div> 
+            <Image src={experienceImg} className={styles. image}/>
+          </Card>
 
-            <Card>
-              <CardHeader header={<Text>
-                 Artificial Intelligence (AI) Intern
-              </Text>}/>
-              
-            </Card>
-          </div>
-           
-  
-         
-       
-          
-            <Text className={styles. subHeading}>Certificates and Training</Text>
-
-            <div className={styles.certificates}>
-            <Card>
-              Developing Solutions for Microsoft Azure (AZ-204).
-            </Card>
-            <Card>
-              Azure AI Engineer Associate (AI-102).
-            </Card>
-            <Card>
-                Azure AI Fundamentals(AI-100).
-            </Card>
-            <Card>
-              Azure Fundamentals(AZ-900).
-            </Card>
-          </div>
-
+          <Card className={styles.card} style={{backgroundColor: "#414A4C",}}>
+          <div  className={styles.cardContentContainer}>
+            <CardHeader header={<Text> How I Like to Work</Text>}className={styles.cardHeader}/>
+             <Text>I work best in environments where:</Text> 
+            <ul >
+              <li>Collaboration and feedback are encouraged.</li>
+              <li>Quality matters as much as delivery.</li>
+              <li>Learning is continuous.</li>
+              <li>Decisions are discussed openly.</li>
+            </ul>
             
-            <Text className={styles. subHeading}>Technologies</Text>
-            <div className={styles.certificates}>
-               <Card>
-                .NET Technologies
-               </Card>
-
-               <Card>
-                Front-end Technologies
-               </Card>
-
-               <Card>
-                Back-end Technologies
-              </Card>
             </div>
-  
+            <Image src={workImg} className={styles.image}/>
+          </Card>
+          
     </div> 
     );
 }
