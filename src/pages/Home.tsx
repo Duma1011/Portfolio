@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link,Image, makeStyles, Text, Card,Divider } from "@fluentui/react-components";
+import { Link,Image, makeStyles, Text, Card,Divider,Button } from "@fluentui/react-components";
 import photo from '../assets/1000034090.jpg';
 import linkedInImg from '../assets/linkedin.png';
 import githubImg from '../assets/github.png';
 
+
 const useStyles=makeStyles({
     container: {
-    gap: "200px",
+    gap: "150px",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -38,7 +39,7 @@ const useStyles=makeStyles({
   personalInformationCard:{
     display: "flex",
     flexDirection: "column",
-    gap: "100px",
+    gap: "50px",
     paddingLeft: "20px",
     '::after': {
       borderTopColor: 'transparent !important',
@@ -99,6 +100,24 @@ const useStyles=makeStyles({
     color:"#166534",
     fontSize: "18px",
     fontWeight: "bold"
+   },
+   buttonContainer:{
+    display:"flex",
+    flexDirection:"row",
+    '::after': {
+      borderTopColor: 'transparent !important',
+      borderRightColor: 'transparent !important',
+      borderBottomColor: 'transparent !important',
+      borderLeftColor: 'transparent !important',
+      color:"#8E9A98"
+    }
+   },
+   downloadButton:{
+      color:"white",
+      outlineButton: {
+       color:"#8E9A98"
+     }
+
    }
 });
 const Home=()=>{
@@ -116,10 +135,14 @@ const Home=()=>{
            </Card> 
 
            <Card className={styles.socialAccountCard}>
-                 <Link href=" https://www.linkedin.com/in/tsitsap11"><Image src={linkedInImg} className={styles.loggo}/></Link>
-                 <Link href="https://github.com/Duma1011"><Image src={githubImg} className={styles.loggo}/></Link>
+              <Link href=" https://www.linkedin.com/in/tsitsap11"><Image src={linkedInImg} className={styles.loggo}/></Link>
+              <Link href="https://github.com/Duma1011"><Image src={githubImg} className={styles.loggo}/></Link>
            </Card>
         </div>
+
+        <Card className={styles.buttonContainer}>
+          <Button as="a"href="/resume.pdf" download className={styles.downloadButton}>Download CV</Button>
+        </Card>
          
         <Card appearance="subtle" className={styles.card}>
             <div className={styles.cardContent}>
@@ -136,6 +159,12 @@ const Home=()=>{
                     <span className={styles.label}>Junior </span> <br/>
                     Cureer Level
                  </Text>
+                 <Divider vertical  className={styles.divider}/>
+                 <Text align="center" className={styles.cardLabel}>
+                    <span className={styles.label}>6 </span> <br/>
+                    Azure Cirtified
+                 </Text>
+
             </div>
         </Card>
         
