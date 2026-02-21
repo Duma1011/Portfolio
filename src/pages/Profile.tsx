@@ -26,7 +26,7 @@ const useStyles = makeStyles({
       borderRightColor: 'transparent !important',
       borderBottomColor: 'transparent !important',
       borderLeftColor: 'transparent !important',
-      color:"#8E9A98"
+      color:"#54626F"
     },
     borderRadius: "16px",
     
@@ -34,6 +34,7 @@ const useStyles = makeStyles({
   cardHeader: {
     fontSize: "20px",
     fontWeight: "bold",
+    color:"#F0F8FF"
   },
   text:{
         color:"#F0F8FF"
@@ -41,13 +42,13 @@ const useStyles = makeStyles({
     pageTitle:{
         fontSize: "20px",
         fontWeight: "bold",
-        color:"#8E9A98"
+        color:"#F0F8FF"
     },
 
     professionDescription:{
         padding: '20px',
         maxWidth: '1000px',
-        color:"#8E9A98"
+        color:"#F0F8FF"
     },
     image: {
     width: "400px",
@@ -79,23 +80,23 @@ const Profile=()=>{
             <Card className={styles.card} style={{backgroundColor: "#414A4C",}}>
             <div className={styles.cardContentContainer}>
             <CardHeader header={<Text>How I Approach Software</Text>} className={styles.cardHeader}/>
-            <Text>When I work on a project, I focus on:</Text>
-            <ul >
+            <Text className={styles.text} >When I work on a project, I focus on:</Text>
+            <ul className={styles.text} >
               <li>
-                  Understanding the problem before the solution
+                  Understanding the problem before the solution.
               </li>
 
               <li>
                 Choosing tools based on trade-offs, not trends.
               </li>
               <li>
-                Designing systems that are simple to reason about
+                Designing systems that are simple to reason about.
               </li>
               <li>
-                Writing code that someone else can read and extend
+                Writing code that someone else can read and extend.
               </li>
             </ul>
-           <Text> I value clean boundaries, clear responsibilities, and predictable behaviour in systems. If something fails, I want to know why, and how it can recover safely.</Text>
+           <Text className={styles.text} > I value clean boundaries, clear responsibilities, and predictable behaviour in systems. If something fails, I want to know why, and how it can recover safely.</Text>
             </div>
           
             <Image src={agileImg} className={styles.image}/>
@@ -108,11 +109,11 @@ const Profile=()=>{
            <div className={styles.cardContentContainer}>
             <CardHeader header={<Text>What I’m Working On</Text>} className={styles.cardHeader}/>
            
-           <Text >Right now, I’m focused on:</Text> 
-            <ul >
-                <li>Building cloud-native applications on Azure</li>
-                <li>Improving my understanding of distributed systems</li>
-                <li>Designing APIs and services that are secure and resilient</li>
+           <Text className={styles.text} >Right now, I’m focused on:</Text> 
+            <ul className={styles.text} >
+                <li>Building cloud-native applications on Azure.</li>
+                <li>Improving my understanding of distributed systems.</li>
+                <li>Designing APIs and services that are secure and resilient.</li>
                 <li>Refining how I communicate technical ideas through documentation and architecture diagrams.</li>
                 <li>
                   Refining my problem solving approach and developing business acumen.
@@ -121,7 +122,7 @@ const Profile=()=>{
                    Exploring with different .NET frameworks.
                   </li>
                </ul>
-                <Text>I enjoy turning complex requirements into practical, working solutions.</Text>
+                <Text className={styles.text} >I enjoy turning complex requirements into practical, working solutions.</Text>
            </div> 
             <Image src={experienceImg} className={styles. image}/>
           </Card>
@@ -129,8 +130,8 @@ const Profile=()=>{
           <Card className={styles.card} style={{backgroundColor: "#414A4C",}}>
           <div  className={styles.cardContentContainer}>
             <CardHeader header={<Text> How I Like to Work</Text>}className={styles.cardHeader}/>
-             <Text>I work best in environments where:</Text> 
-            <ul >
+             <Text className={styles.text} >I work best in environments where:</Text> 
+            <ul className={styles.text} >
               <li>Collaboration and feedback are encouraged.</li>
               <li>Quality matters as much as delivery.</li>
               <li>Learning is continuous.</li>

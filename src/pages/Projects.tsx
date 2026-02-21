@@ -27,7 +27,7 @@ card: {
    cardHeader:{
         fontSize: "20px",
         fontWeight: "bold",
-        color:"#8E9A98"
+        color:"#F0F8FF"
     },
     container:{
         gap: "20px",
@@ -39,13 +39,13 @@ card: {
     pageTitle:{
         fontSize: "20px",
         fontWeight: "bold",
-        color:"#8E9A98"
+        color:"#F0F8FF"
     },
     projectImage:{
         height: "250px",
     },
     projectDescription:{
-        color:"#8E9A98"
+        color:"#F0F8FF"
     }
 });
 const Projects=()=>{

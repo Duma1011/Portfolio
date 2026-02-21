@@ -50,16 +50,16 @@ const useStyles = makeStyles(
     },
 
     paragraph:{
-        color:"#8E9A98"
+        color:"#F0F8FF"
     },
     title:{
         fontSize: "30px",
         fontWeight: "bold",
-        color:"#8E9A98"
+        color:"#F0F8FF"
     },
     text:{
         fontSize: "16px",
-        color:"#111111"
+        color:"#F0F8FF"
     }
 });
 
