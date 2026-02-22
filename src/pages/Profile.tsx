@@ -70,7 +70,7 @@ const Profile=()=>{
             <Text className={styles.pageTitle}>My Profile</Text>
 
             <Text className={styles.professionDescription}>
-               I’m a software engineer with a strong interest in building reliable, well-structured systems that solve real problems.
+               I’m a Cloud and Software Engineer focused on building reliable, well-structured systems that solve real problems.
                My background in mathematics and computer science has shaped how I approach software, I care about clarity, correctness, and long-term maintainability, not just making things work.
 
                I enjoy working across the stack, particularly where cloud architecture, backend services, and automation intersect. I’m especially interested in systems that need to scale, handle failure gracefully, and operate in real-world constraints.
