@@ -1,17 +1,18 @@
 import React from 'react';
-import { Link,Image, makeStyles, Text, Card,Divider,Button } from "@fluentui/react-components";
+import { tokens,Link,Image, makeStyles, Text, Card,Divider,Button } from "@fluentui/react-components";
 import photo from '../assets/1000034090.jpg';
 import linkedInImg from '../assets/linkedin.png';
 import githubImg from '../assets/github.png';
+import profile from '../assets/profile.jpg';
 
 
 const useStyles=makeStyles({
     container: {
-    gap: "150px",
+    gap: "0px",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    paddingLeft: "40px",
+    paddingLeft: "100px",
   },
 
   cardContent:{
@@ -39,8 +40,8 @@ const useStyles=makeStyles({
   personalInformationCard:{
     display: "flex",
     flexDirection: "column",
-    gap: "50px",
-    paddingLeft: "20px",
+    gap: "25px",
+    paddingLeft: "30px",
     '::after': {
       borderTopColor: 'transparent !important',
       borderRightColor: 'transparent !important',
@@ -88,13 +89,18 @@ const useStyles=makeStyles({
 
    titleSocialContainer:{
     display: "flex",
+    alignItems: "flex-start",   
     flexDirection: "column",
+    paddingLeft:"10px",
     justifyContent: "space-between",
-    gap: "30px",
+    gap: "10px",
    },
    frontPicture:{
     width: "300px",
-    shape: "circular"
+    height:"300px",
+    borderRadius: "150px",
+    boxShadow:"0 20px 40px rgba(0,0,0,0.4)"
+  
    },
    label:{
     color:"#166534",
@@ -114,10 +120,13 @@ const useStyles=makeStyles({
    },
    downloadButton:{
       color:"white",
-      outlineButton: {
-       color:"#8E9A98"
-     }
-
+      backgroundColor:"#166534",
+      width:"110px",
+      height: "30px",  
+      ":hover": { backgroundColor: "#14532d", color: "white" },
+      ":active": { backgroundColor: "#0f3d22", color: "white" },
+      ":visited": { color: "white" },
+      
    }
 });
 const Home=()=>{
@@ -130,7 +139,7 @@ const Home=()=>{
                 <Text >
                 <span className={styles.IamLLabel}>Hi, I am <br /></span>
                  <span className={styles.nameTitle}>Phumezile Tsitsa <br/></span>
-                 <span className={styles.cureerTitle}>Software Developer/Engineer</span> 
+                 <span className={styles.cureerTitle}>Cloud and Software Engineer</span> 
                 </Text>
            </Card> 
 
@@ -138,16 +147,16 @@ const Home=()=>{
               <Link href=" https://www.linkedin.com/in/tsitsap11"><Image src={linkedInImg} className={styles.loggo}/></Link>
               <Link href="https://github.com/Duma1011"><Image src={githubImg} className={styles.loggo}/></Link>
            </Card>
-        </div>
 
-        <Card className={styles.buttonContainer}>
-          <Button as="a"href="/resume.pdf" download className={styles.downloadButton}>Download CV</Button>
-        </Card>
-         
+           
+       </div>
+         <Card className={styles.card} style={{padding:"20px"}}>
+           <Button appearance="primary" as="a"href="/resume.pdf" download className={styles.downloadButton} size="large">Download CV</Button>
+         </Card>
         <Card appearance="subtle" className={styles.card}>
             <div className={styles.cardContent}>
                 <Text align="center" className={styles.cardLabel}>
-                   <span className={styles.label}>1.5+ </span> <br/>years experience 
+                   <span className={styles.label}>1.5 years </span> <br/>experience 
                 </Text>
 
                 <Divider vertical  className={styles.divider}/>
@@ -156,8 +165,8 @@ const Home=()=>{
                 </Text>
                  <Divider vertical  className={styles.divider}/>
                  <Text align="center" className={styles.cardLabel}>
-                    <span className={styles.label}>Junior </span> <br/>
-                    Cureer Level
+                    <span className={styles.label}>AI & Cloud Developer</span> <br/>
+                    Career Level
                  </Text>
                  <Divider vertical  className={styles.divider}/>
                  <Text align="center" className={styles.cardLabel}>
@@ -167,13 +176,13 @@ const Home=()=>{
 
             </div>
         </Card>
-        
     </Card>
 
     <Image
-     src={photo}
+     src={profile}
      shadow={true}
      className={styles.frontPicture}
+     shape="rounded"
     />
 </div>
     

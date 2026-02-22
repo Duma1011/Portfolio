@@ -8,23 +8,31 @@ import Contact from './pages/Contact';
 const useStyles=makeStyles({
   
   tabList:{
-    alignItems:"flex-start",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
     padding: "20px 20px",
     columnGap: "20px",
     color: "white",
-
+    marginLeft: "auto",  
+    justifyContent: "flex-start",
+    paddingLeft: "800px",
   },
   mainPage:{
     backgroundColor:"#1b1b1e",
     minHeight: '100vh', 
     textColor: 'white',
-     backgroundImage: "url('/background.jpg')",
+    backgroundImage: "url('/background.jpg')",
+    width: "100%",
+    alignItems: "flex-end",
+    padding:"24px 60px",
   },
   tab:{
-    color:"#8E9A98"
+    color:"#8E9A98",
+    fontWeight:"500",
+    ":hover":{
+    color:"#22c55e",
+  },
+    fontSize: "18px"
   }
 });
 
