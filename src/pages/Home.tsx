@@ -38,10 +38,11 @@ const useStyles=makeStyles({
     padding: "20px",
   },
   personalInformationCard:{
+    alignItems:"center",
     display: "flex",
     flexDirection: "column",
     gap: "25px",
-    paddingLeft: "30px",
+    paddingLeft: "200px",
     '::after': {
       borderTopColor: 'transparent !important',
       borderRightColor: 'transparent !important',
@@ -76,8 +77,9 @@ const useStyles=makeStyles({
    },
    cureerTitle:{
     color:"#00693E",
-    fontSize:"30px", 
-    fontWeight:"bold"
+    fontSize:"40px", 
+    fontWeight:"bold",
+    //SpaddingLeft:"20px"
    },
    nameTitle:{
      fontSize:"20px"
@@ -91,15 +93,14 @@ const useStyles=makeStyles({
     display: "flex",
     alignItems: "flex-start",   
     flexDirection: "column",
-    paddingLeft:"10px",
     justifyContent: "space-between",
-    gap: "10px",
+    gap: "20px",
    },
    frontPicture:{
     width: "300px",
     height:"300px",
     borderRadius: "150px",
-    boxShadow:"0 20px 40px rgba(0,0,0,0.4)"
+    boxShadow:"0 20px 40px rgba(0,0,0,0.4)",
   
    },
    label:{
@@ -134,27 +135,22 @@ const Home=()=>{
     return(
     <div className={styles.container}>
     <Card className={styles.personalInformationCard}>
-       <div className={styles.titleSocialContainer}> 
-           <Card appearance="subtle" className={styles.card}>     
+       <div className={styles.titleSocialContainer}>     
                 <Text >
-                <span className={styles.IamLLabel}>Hi, I am <br /></span>
-                 <span className={styles.nameTitle}>Phumezile Tsitsa <br/></span>
+                <span className={styles.IamLLabel}>Hi, I am Phumezile<br /></span>
+                 
                  <span className={styles.cureerTitle}>Cloud and Software Engineer</span> 
                 </Text>
-           </Card> 
+           <div style={{"paddingLeft":"120px"}}>
+           <Image
+             src={profile}
+             shadow={true}
+             className={styles.frontPicture}
+             shape="rounded"
+           />
+          </div>
 
-           <Card className={styles.socialAccountCard}>
-              <Link href=" https://www.linkedin.com/in/tsitsap11"><Image src={linkedInImg} className={styles.loggo}/></Link>
-              <Link href="https://github.com/Duma1011"><Image src={githubImg} className={styles.loggo}/></Link>
-           </Card>
-
-           
-       </div>
-         <Card className={styles.card} style={{padding:"20px"}}>
-           <Button appearance="primary" as="a"href="/resume.pdf" download className={styles.downloadButton} size="large">Download CV</Button>
-         </Card>
-        <Card appearance="subtle" className={styles.card}>
-            <div className={styles.cardContent}>
+           {/*<div className={styles.cardContent}>
                 <Text align="center" className={styles.cardLabel}>
                    <span className={styles.label}>1.5 years </span> <br/>experience 
                 </Text>
@@ -175,15 +171,25 @@ const Home=()=>{
                  </Text>
 
             </div>
-        </Card>
+         
+
+           <Card className={styles.socialAccountCard}>
+              <Link href=" https://www.linkedin.com/in/tsitsap11"><Image src={linkedInImg} className={styles.loggo}/></Link>
+              <Link href="https://github.com/Duma1011"><Image src={githubImg} className={styles.loggo}/></Link>
+           </Card>
+           */}
+
+           
+       </div>
+         {/*<Card className={styles.card} style={{padding:"20px"}}>
+           <Button appearance="primary" as="a"href="/resume.pdf" download className={styles.downloadButton} size="large">Download CV</Button>
+         </Card>
+        <Card appearance="subtle" className={styles.card}>
+            
+        </Card>*/}
     </Card>
 
-    <Image
-     src={profile}
-     shadow={true}
-     className={styles.frontPicture}
-     shape="rounded"
-    />
+    
 </div>
     
 );

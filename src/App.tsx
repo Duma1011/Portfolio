@@ -15,7 +15,7 @@ const useStyles=makeStyles({
     color: "white",
     marginLeft: "auto",  
     justifyContent: "flex-start",
-    paddingLeft: "800px",
+    paddingLeft: "400px",
   },
   mainPage:{
     backgroundColor:"#1b1b1e",
@@ -23,7 +23,7 @@ const useStyles=makeStyles({
     textColor: 'white',
     backgroundImage: "url('/background.jpg')",
     width: "100%",
-    alignItems: "flex-end",
+    alignItems: "center",
     padding:"24px 60px",
   },
   tab:{
@@ -47,17 +47,19 @@ const App=()=>{
   const styles=useStyles();
   return(
   <div className={styles.mainPage}>
-    <TabList className={styles.tabList} onTabSelect={handleTabSelection} selectedValue={selectedTab} disabled={false}>
-      <Tab value="home" className={styles.tab}>Home</Tab>
-      <Tab value="about" className={styles.tab}>Profile</Tab> 
-      <Tab value="projects" className={styles.tab}>Projects</Tab>
-      <Tab value="contact" className={styles.tab}>Contacts</Tab>
-    </TabList>
-
     {selectedTab==="home" && <Home/>}
     {selectedTab==="about" && <Profile/>}
     {selectedTab==="projects" && <Projects/>}
     {selectedTab==="contact" && <Contact/>}
+
+    <TabList className={styles.tabList} onTabSelect={handleTabSelection} selectedValue={selectedTab} disabled={false}>
+      {/* <Tab value="home" className={styles.tab}>Home</Tab> */}
+      <Tab value="about" className={styles.tab}>Check My Profile</Tab> 
+      <Tab value="projects" className={styles.tab}>View Projects</Tab>
+      <Tab value="contact" className={styles.tab}>Contacts</Tab>
+    </TabList>
+
+    
   </div>
   );
 }

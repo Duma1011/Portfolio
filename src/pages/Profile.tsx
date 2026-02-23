@@ -6,10 +6,10 @@ import agileImg from '../assets/Agile.jpg';
 import workImg from '../assets/work.jpeg'
 const useStyles = makeStyles({
   container: {
-    gap: "20px",
+    gap: "40px",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    // alignItems: "center",
     padding: "20px",
   },
 
@@ -42,11 +42,12 @@ const useStyles = makeStyles({
     pageTitle:{
         fontSize: "20px",
         fontWeight: "bold",
-        color:"#F0F8FF"
+        color:"#F0F8FF",
+        textAlign: "center"
     },
 
     professionDescription:{
-        padding: '20px',
+        // padding: '20px',
         maxWidth: '1000px',
         color:"#F0F8FF"
     },
@@ -67,8 +68,8 @@ const Profile=()=>{
 
     return(
     <div className={styles.container}>
-            <Text className={styles.pageTitle}>My Profile</Text>
-
+            <Text className={styles.pageTitle}>About Me</Text>
+            <Text >A bit about me</Text>
             <Text className={styles.professionDescription}>
                I’m a Cloud and Software Engineer focused on building reliable, well-structured systems that solve real problems.
                My background in mathematics and computer science has shaped how I approach software, I care about clarity, correctness, and long-term maintainability, not just making things work.
