@@ -1,12 +1,12 @@
-import React from 'react';
-import {makeStyles,Text, Card,CardHeader,CardPreview,Body1,Image} from "@fluentui/react-components";
+import { useState, useRef } from "react";
+import {TabList,Tab,makeStyles,Text, Card,CardHeader,Image,Divider} from "@fluentui/react-components";
 import experienceImg from '../assets/experience.jpg';
 import agileImg from '../assets/Agile.jpg';
 
 import workImg from '../assets/work.jpeg'
 const useStyles = makeStyles({
   container: {
-    gap: "40px",
+    gap: "25px",
     display: "flex",
     flexDirection: "column",
     // alignItems: "center",
@@ -37,19 +37,25 @@ const useStyles = makeStyles({
     color:"#F0F8FF"
   },
   text:{
-        color:"#F0F8FF"
+    color:"#F0F8FF",
+    },
+
+    titleText:{
+      color:"#8E9A98",
+      fontWeight: "bold",
+      fontSize: "30px",
     },
     pageTitle:{
-        fontSize: "20px",
+        fontSize: "40px",
         fontWeight: "bold",
-        color:"#F0F8FF",
+        color:"#8E9A98",
         textAlign: "center"
     },
 
     professionDescription:{
         // padding: '20px',
         maxWidth: '1000px',
-        color:"#F0F8FF"
+        color:"#8E9A98"
     },
     image: {
     width: "400px",
@@ -59,23 +65,55 @@ const useStyles = makeStyles({
   cardContentContainer:
   {
     width:"500px"
-  }
+  },
+  tabListButton:{
+    color:"#8E9A98",
+    paddingLeft: "10px",
+    paddingRight: "10px",
+    fontWeight:"500",
+    ":hover":{
+    color:"#22c55e"
+  }}
 });
 
 
 const Profile=()=>{
     const styles = useStyles();
+    const [selectedTab, setSelectedTab] = useState("about");
+
+     // refs for each section
+    const aboutRef = useRef<HTMLDivElement>(null);
+    const experienceRef = useRef<HTMLDivElement>(null);
+    const educationRef = useRef<HTMLDivElement>(null);
+    const trainingRef=useRef<HTMLDivElement>(null);
+
+    const scrollToSection = (ref: React.RefObject<HTMLDivElement| null>, tab: string) => {
+    setSelectedTab(tab);
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
     return(
-    <div className={styles.container}>
-            <Text className={styles.pageTitle}>About Me</Text>
-            <Text >A bit about me</Text>
-            <Text className={styles.professionDescription}>
-               I’m a Cloud and Software Engineer focused on building reliable, well-structured systems that solve real problems.
-               My background in mathematics and computer science has shaped how I approach software, I care about clarity, correctness, and long-term maintainability, not just making things work.
+    <div style={{flexDirection: "row",display: "flex"}}>
+      <div>
+        <TabList style={{ "rowGap": "20px",}} vertical>
+        <Tab value="about" className={styles.tabListButton} onClick={() => scrollToSection(aboutRef, "education")} >About</Tab>
+        <Tab value="education" className={styles.tabListButton} onClick={() => scrollToSection(educationRef, "education")}>Education</Tab>
+        <Tab value="workExperience" className={styles.tabListButton}  onClick={() => scrollToSection(experienceRef, "experience")}>Experince</Tab>
+        <Tab value="training" className={styles.tabListButton} onClick={() => scrollToSection(trainingRef, "education")}>Training</Tab>
+      </TabList>
+      </div>
 
-               I enjoy working across the stack, particularly where cloud architecture, backend services, and automation intersect. I’m especially interested in systems that need to scale, handle failure gracefully, and operate in real-world constraints.
-            </Text>
+      <div>
+
+      {/* About Section */}
+      <div className={styles.container} ref={aboutRef}>
+        <Text className={styles.pageTitle} >About Me</Text>
+        <Text className={styles.titleText} >A bit about me</Text>
+        <Text className={styles.professionDescription}>
+            I’m a Cloud and Software Engineer focused on building reliable, well-structured systems that solve real problems.
+            My background in mathematics and computer science has shaped how I approach software, I care about clarity, correctness, and long-term maintainability, not just making things work.
+            I enjoy working across the stack, particularly where cloud architecture, backend services, and automation intersect. I’m especially interested in systems that need to scale, handle failure gracefully, and operate in real-world constraints.
+        </Text>
       
         <div style={{flexDirection: "row",display: "flex"}}>
             <Card className={styles.card} style={{backgroundColor: "#414A4C",}}>
@@ -142,7 +180,41 @@ const Profile=()=>{
             </div>
             <Image src={workImg} className={styles.image}/>
           </Card>
-          
+          <Divider />
+      </div>
+
+      {/* Education Section */}
+      <div ref={educationRef}>
+        <Text>Education</Text>
+        <Card className={styles.card} style={{backgroundColor: "#414A4C",}}>
+           <div className={styles.cardContentContainer}>
+            <CardHeader header={<Text>BSc Mathematics and Computer Sciences-UCT</Text>} className={styles.cardHeader}/>
+           </div> 
+         
+        </Card>
+
+        <Card className={styles.card} style={{backgroundColor: "#414A4C",}}>
+           <div className={styles.cardContentContainer}>
+            <CardHeader header={<Text>Matric-Bardale Secondary</Text>} className={styles.cardHeader}/>
+           </div> 
+         
+        </Card>
+
+        <Divider />
+      </div>
+
+      {/* Training Section */}
+       <div ref={trainingRef}>
+          <Text> Training</Text>
+          <Divider />
+       </div>
+
+       {/* Work Experience Section */}
+        <div ref={experienceRef}>
+          <Text>Experience</Text>
+          <Divider />
+        </div>
+      </div>
     </div> 
     );
 }
