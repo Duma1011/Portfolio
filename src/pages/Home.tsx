@@ -4,7 +4,7 @@ import profile from '../assets/profile.jpg';
 import Profile from './Profile';
 import Projects from "./Projects";
 import Contact from './Contact';
-import { EmojiLaughRegular,BuildingRegular,RibbonStarRegular,ContactCardRegular} from "@fluentui/react-icons";
+import { EmojiLaughRegular,BuildingRegular,RibbonStarRegular,ContactCardRegular,HandWaveRegular} from "@fluentui/react-icons";
 
 
 const useStyles=makeStyles({
@@ -23,7 +23,11 @@ const useStyles=makeStyles({
    },
 
    IamLLabel:{
-    color:"#8E9A98"
+    color:"#8E9A98",
+    // fontWeight:"bold",
+    paddingLeft:"150px",
+    fontSize:"30px", 
+
    }, 
    frontPicture:{
     width: "300px",
@@ -62,8 +66,9 @@ const Home=()=>{
      <div className={styles. mainPage}>
        {selectedTab === "home" &&  (     
         <div style={{"paddingLeft":"120px","flexDirection": "column","display": "flex","gap":"30px","alignItems": "center"}}>
+          
             <Text >
-                <span className={styles.IamLLabel}>Hi, I am Phumezile<br /></span>
+                <span className={styles.IamLLabel}>Hi <HandWaveRegular />, I'm Phumezile<br /></span>
                  
                  <span className={styles.careerTitle}>Cloud and Software Engineer</span> 
                 </Text>
