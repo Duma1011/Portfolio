@@ -1,65 +1,24 @@
-import { useState }  from 'react';
-import { makeStyles,Tab, TabList,SelectTabData} from "@fluentui/react-components";
+import { Button,makeStyles} from "@fluentui/react-components";
 import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Projects from "./pages/Projects";
-import Contact from './pages/Contact';
 
 const useStyles=makeStyles({
-  
-  tabList:{
-    display: "flex",
-    flexDirection: "row",
-    padding: "20px 20px",
-    columnGap: "20px",
-    color: "white",
-    marginLeft: "auto",  
-    justifyContent: "flex-start",
-    paddingLeft: "400px",
-  },
   mainPage:{
     backgroundColor:"#1b1b1e",
     minHeight: '100vh', 
-    textColor: 'white',
     backgroundImage: "url('/background.jpg')",
     width: "100%",
     alignItems: "center",
     padding:"24px 60px",
   },
-  tab:{
-    color:"#8E9A98",
-    fontWeight:"500",
-    ":hover":{
-    color:"#22c55e",
-  },
-    fontSize: "18px"
-  }
+  
 });
 
 
 const App=()=>{
-  const [selectedTab,setSelectedTab]=useState("home");
-
-  const handleTabSelection=(event: React.FormEvent<HTMLElement>, data: SelectTabData)=>
-    {
-      setSelectedTab(data.value as string);
-    }
   const styles=useStyles();
   return(
   <div className={styles.mainPage}>
-    {selectedTab==="home" && <Home/>}
-    {selectedTab==="about" && <Profile/>}
-    {selectedTab==="projects" && <Projects/>}
-    {selectedTab==="contact" && <Contact/>}
-
-    <TabList className={styles.tabList} onTabSelect={handleTabSelection} selectedValue={selectedTab} disabled={false}>
-      {/* <Tab value="home" className={styles.tab}>Home</Tab> */}
-      <Tab value="about" className={styles.tab}>Check My Profile</Tab> 
-      <Tab value="projects" className={styles.tab}>View Projects</Tab>
-      <Tab value="contact" className={styles.tab}>Contacts</Tab>
-    </TabList>
-
-    
+    <Home/>
   </div>
   );
 }

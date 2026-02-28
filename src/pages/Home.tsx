@@ -1,20 +1,21 @@
-import React from 'react';
-import { tokens,Link,Image, makeStyles, Text, Card,Divider,Button } from "@fluentui/react-components";
-import photo from '../assets/1000034090.jpg';
-import linkedInImg from '../assets/linkedin.png';
-import githubImg from '../assets/github.png';
+import { useState }  from 'react';
+import {Button,SearchBox,Image, makeStyles, Text, TabList,SelectTabData,Card} from "@fluentui/react-components";
 import profile from '../assets/profile.jpg';
+import Profile from './Profile';
+import Projects from "./Projects";
+import Contact from './Contact';
+import { EmojiLaughRegular,BuildingRegular,RibbonStarRegular,ContactCardRegular} from "@fluentui/react-icons";
 
 
 const useStyles=makeStyles({
     container: {
-    gap: "0px",
+    gap: "10px",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    paddingLeft: "100px",
+    justifyContent: "center",
+    width: "100%",
   },
-
   cardContent:{
     flexDirection: "row",
     display: "flex",
@@ -127,70 +128,68 @@ const useStyles=makeStyles({
       ":hover": { backgroundColor: "#14532d", color: "white" },
       ":active": { backgroundColor: "#0f3d22", color: "white" },
       ":visited": { color: "white" },
-      
-   }
+   },
+   tab:{
+    color:"#8E9A98",
+    fontWeight:"500",
+    ":hover":{
+    color:"#22c55e",
+  }
+}
+   
 });
 const Home=()=>{
     const styles=useStyles();
+    const [selectedTab,setSelectedTab]=useState("home");
+    
+      const handleAboutButton= () =>{
+          setSelectedTab("about")
+      }
+    
+      const handleProjectButton= () =>{
+          setSelectedTab("projects")
+      }
+    
+      const handleContactButton= () =>{
+          setSelectedTab("contact")
+      }
+
     return(
-    <div className={styles.container}>
-    <Card className={styles.personalInformationCard}>
-       <div className={styles.titleSocialContainer}>     
-                <Text >
+     <div className={styles.container}>
+       {selectedTab === "home" &&  (  
+      
+               
+           <div style={{"paddingLeft":"120px","flexDirection": "column","display": "flex","gap":"30px","alignItems": "center"}}>
+            <Text >
                 <span className={styles.IamLLabel}>Hi, I am Phumezile<br /></span>
                  
                  <span className={styles.cureerTitle}>Cloud and Software Engineer</span> 
                 </Text>
-           <div style={{"paddingLeft":"120px"}}>
            <Image
              src={profile}
              shadow={true}
              className={styles.frontPicture}
              shape="rounded"
            />
+
+           <SearchBox size="large" style={{"backgroundColor":"white","borderRadius": "20px", "width": "400px" }}/>
+
+           <TabList>
+              <Button onClick={handleAboutButton} className={styles.tab} icon={<EmojiLaughRegular />}>Me</Button>
+              <Button onClick={handleProjectButton} className={styles.tab} icon={<BuildingRegular />}>Projects </Button>
+              <Button onClick={handleProjectButton} className={styles.tab} icon={<RibbonStarRegular />}>Skills</Button>
+              <Button onClick={handleContactButton} className={styles.tab} icon={<ContactCardRegular />}>Contacts </Button>
+           </TabList>
+
           </div>
+        )}
 
-           {/*<div className={styles.cardContent}>
-                <Text align="center" className={styles.cardLabel}>
-                   <span className={styles.label}>1.5 years </span> <br/>experience 
-                </Text>
+  {selectedTab==="about" && <Profile/>}
+  {selectedTab==="projects" && <Projects/>}
+  {selectedTab==="contact" && <Contact/>}
 
-                <Divider vertical  className={styles.divider}/>
-                <Text align="center" className={styles.cardLabel}>
-                    <span className={styles.label}>5+ </span> <br/> Personal Projects
-                </Text>
-                 <Divider vertical  className={styles.divider}/>
-                 <Text align="center" className={styles.cardLabel}>
-                    <span className={styles.label}>AI & Cloud Developer</span> <br/>
-                    Career Level
-                 </Text>
-                 <Divider vertical  className={styles.divider}/>
-                 <Text align="center" className={styles.cardLabel}>
-                    <span className={styles.label}>6 </span> <br/>
-                    Azure Cirtified
-                 </Text>
-
-            </div>
-         
-
-           <Card className={styles.socialAccountCard}>
-              <Link href=" https://www.linkedin.com/in/tsitsap11"><Image src={linkedInImg} className={styles.loggo}/></Link>
-              <Link href="https://github.com/Duma1011"><Image src={githubImg} className={styles.loggo}/></Link>
-           </Card>
-           */}
-
-           
-       </div>
-         {/*<Card className={styles.card} style={{padding:"20px"}}>
-           <Button appearance="primary" as="a"href="/resume.pdf" download className={styles.downloadButton} size="large">Download CV</Button>
-         </Card>
-        <Card appearance="subtle" className={styles.card}>
-            
-        </Card>*/}
-    </Card>
-
-    
 </div>
+   
     
 );
 }
